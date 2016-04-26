@@ -106,6 +106,28 @@
       {% if site.data.resume.demo %}
       <div class="visible-xs hidden-print resume-view-pdf"><a href="http://cl.ly/Zb42/download/resume-print-sample.pdf" class="btn btn-primary btn-lg">View Generated PDF</a></div>
       {% endif %}
+      <nav class="navbar navbar-default hidden-print hidden-xs" role="navigation">
+    <div class="resume-nav">
+          <span>Save this resume as a PDF
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveAsPdf">
+            Save as PDF
+          </button>
+          <div class="modal fade" id="saveAsPdf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img src="{{ "/images/resume_print_dialog.png" | prepend:site.baseurl }}" class="img-rounded" width="400" height="342">
+                  <p>Works best with Chrome.</p>
+                </div>
+                <div class="modal-footer">
+                  <button onclick="window.print()" class="btn btn-primary">Open Print Dialog</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
     {% if site.data.resume.demo %}
     <div class="hidden-print resume-bottom">
@@ -185,27 +207,5 @@ location: "Tokyo, Japan"
     <script src="{{ "/javascripts/bootstrap.min.js" | prepend:site.baseurl }}"></script>
     <script src="{{ "/javascripts/resumecards.js" | prepend:site.baseurl }}"></script>
     {% include scripts.html %}
-    <nav class="navbar navbar-default hidden-print hidden-xs" role="navigation">
-    <div class="resume-nav">
-          <span>Save this resume as a PDF
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveAsPdf">
-            Save as PDF
-          </button>
-          <div class="modal fade" id="saveAsPdf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <img src="{{ "/images/resume_print_dialog.png" | prepend:site.baseurl }}" class="img-rounded" width="400" height="342">
-                  <p>Warning: Currently, ResumeCards works the best on Chrome.<br>You need to adjust the CSS for Firefox/Safari.</p>
-                </div>
-                <div class="modal-footer">
-                  <button onclick="window.print()" class="btn btn-primary">Open Print Dialog</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
   </body>
 </html>
